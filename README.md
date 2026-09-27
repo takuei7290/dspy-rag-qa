@@ -1,5 +1,7 @@
 # dspy-rag-qa
 
+[![CI](https://github.com/takuei7290/dspy-rag-qa/actions/workflows/ci.yml/badge.svg)](https://github.com/takuei7290/dspy-rag-qa/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE) ![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB)
+
 自分で書いたMarkdown/テキストをもとに質問に答える、RAG(検索拡張生成)搭載のQAボットです。
 DSPyの基本(Signature・Module・Retriever)から、評価・最適化(Optimizer)までを学ぶために作成しています。
 LLMと埋め込みモデルはOllamaでローカル実行するため、APIキーや利用料金は不要です。
