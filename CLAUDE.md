@@ -7,7 +7,7 @@
 DSPy学習用の練習プロジェクト。自作のMarkdown/テキストをもとに答えるRAG搭載QAボット(CLI)を作りながら、DSPyの基本から評価・最適化までを学ぶ。
 要件と構成は `README.md` の「要件」「構成」に書いてある。機能を追加・変更するときはREADMEも合わせて更新する。
 
-前のプロジェクト `../python-todo-cli/` と同じ流れで進める。設定ファイル(`ci.yml`、`pyproject.toml`、`.vscode/settings.json`、`.claude/skills/git-message/`)はそちらを参考・コピー元にしてよい。ただし今回は仮想環境・パッケージ管理に **uv** を使うので、pip前提の部分は読み替える。
+前のプロジェクト `../../python-todo-cli/` と同じ流れで進める。設定ファイル(`ci.yml`、`pyproject.toml`)はそちらを参考・コピー元にしてよい。ただし今回は仮想環境・パッケージ管理に **uv** を使うので、pip前提の部分は読み替える。
 
 ## 返答のルール
 
@@ -54,9 +54,8 @@ DSPy学習用の練習プロジェクト。自作のMarkdown/テキストをも�
 3. **開発環境と土台**(`chore/setup` ブランチ、PR 1つ)
    - `uv init --python 3.12` で `pyproject.toml` と `.python-version` を作成(`--python` を付けないと、uvが自動で入れた3.11が選ばれる)
    - `uv add dspy`、`uv add --dev pytest ruff` → `uv.lock` ができる
-   - `pyproject.toml` に pytest(`pythonpath`)と ruff の設定
+   - `pyproject.toml` に pytest(`testpaths`)と ruff の設定(srcレイアウトなので `pythonpath` は不要)
    - `.gitignore` を作成(リポジトリ作成時に付け忘れたため。GitHubの `Python.gitignore` テンプレートをもとに、`.venv` `__pycache__` `.pytest_cache` `.ruff_cache`、作成したインデックスなどの生成物が入っているか確認する)
-   - `.vscode/settings.json`(cSpell辞書に `dspy` `ollama` `gemma` など)、`.claude/skills/git-message/` をコピー
    - Ollama から DSPy 経由で `gemma3:4b` を1回呼び出せることを確認する
 4. **GitHubの仕組み**
    - `.github/workflows/ci.yml`(`uv sync` → pytest + `ruff check` + `ruff format --check`)を `ci/` ブランチで追加
