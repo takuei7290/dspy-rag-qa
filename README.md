@@ -21,6 +21,7 @@ LLMと埋め込みモデルはOllamaでローカル実行するため、APIキ�
 ### あとで作る機能
 
 - 資料に答えがないときに「分かりません」と答える
+- 出典にファイル名だけでなく条番号(例: `work-rules.md 第12条`)も表示する
 - より強力なOptimizer(MIPROv2・GEPAなど)での最適化と、結果の比較(GEPAでは `gemma3:12b` を振り返り役にする)
 - 大きいモデル(`gemma3:12b`)を教師役にした最適化
 - 検索の設定を変えたときのスコア比較
@@ -57,7 +58,7 @@ LLMと埋め込みモデルはOllamaでローカル実行するため、APIキ�
 | 教師・採点用LLM | Ollama `gemma3:12b`(最適化のお手本作り、LLMによる採点、4bとのスコア比較に使う。重いので回答用には使わない) |
 | 埋め込みモデル | Ollama `embeddinggemma`(日本語を含む多言語に対応) |
 | 検索 | `dspy.retrievers.Embeddings`(小規模なのでベクトルDBは使わない) |
-| 知識のもと | `docs/` 配下の自作Markdown/テキスト(過去プロジェクトのREADME・振り返り・学習メモなど) |
+| 知識のもと | `docs/` 配下の自作Markdown/テキスト(架空の会社「株式会社しろくま堂システムズ」の就業規則・給与規程・旅費規程・育児・介護休業規程。各条は「第◯条(見出し)」の形で書き、法律の一般的な値とは違う会社独自の数字を入れて、資料を検索しないと答えられないようにしている) |
 | 評価データ | `data/` 配下のJSONL(質問と正解のペアを20〜30問、自作する) |
 | インターフェース | CLI(`argparse` のサブコマンド) |
 
@@ -96,7 +97,7 @@ ollama pull embeddinggemma
 uv run dspy-rag-qa index
 
 # 1問だけ質問する
-uv run dspy-rag-qa ask "python-todo-cli ではタスクをどこに保存している?"
+uv run dspy-rag-qa ask "有給休暇は入社してから何か月後にもらえる?"
 
 # 対話モード
 uv run dspy-rag-qa chat
