@@ -48,9 +48,10 @@ DSPy学習用の練習プロジェクト。自作のMarkdown/テキストをも�
 ## 進め方(この順番で進める)
 
 前のプロジェクトで学んだとおり、**土台を最初にそろえてから機能を作る**。
+今どのステップかは印を付けず、`git log`・PR・Issue から判断する。
 
-1. **何を作るか決める**: READMEに要件(必須の機能・あとで作る機能・対象外)を書く ← 済
-2. **リポジトリ作成**: GitHub上でLICENSE(MIT)付きで作成 → clone → リポジトリ単位で noreply のメールアドレスを設定 → `docs/` ブランチで `README.md` と `CLAUDE.md` を入れる ← 実施中
+1. **何を作るか決める**: READMEに要件(必須の機能・あとで作る機能・対象外)を書く
+2. **リポジトリ作成**: GitHub上でLICENSE(MIT)付きで作成 → clone → リポジトリ単位で noreply のメールアドレスを設定 → `docs/` ブランチで `README.md` と `CLAUDE.md` を入れる
 3. **開発環境と土台**(`chore/setup` ブランチ、PR 1つ)
    - `uv init --python 3.12` で `pyproject.toml` と `.python-version` を作成(`--python` を付けないと、uvが自動で入れた3.11が選ばれる)
    - `uv add dspy`、`uv add --dev pytest ruff` → `uv.lock` ができる
