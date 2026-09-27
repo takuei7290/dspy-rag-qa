@@ -91,19 +91,19 @@ ollama pull embeddinggemma
 
 ```bash
 # docs/ の資料からインデックスを作る
-uv run qa.py index
+uv run dspy-rag-qa index
 
 # 1問だけ質問する
-uv run qa.py ask "python-todo-cli ではタスクをどこに保存している?"
+uv run dspy-rag-qa ask "python-todo-cli ではタスクをどこに保存している?"
 
 # 対話モード
-uv run qa.py chat
+uv run dspy-rag-qa chat
 
 # 評価データで採点する
-uv run qa.py evaluate
+uv run dspy-rag-qa evaluate
 
 # 最適化して保存する
-uv run qa.py optimize
+uv run dspy-rag-qa optimize
 ```
 
 ## テスト・開発

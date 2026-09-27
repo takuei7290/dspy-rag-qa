@@ -1,0 +1,32 @@
+[project]
+name = "dspy-rag-qa"
+version = "0.1.0"
+description = "自分で書いたMarkdown/テキストをもとに質問に答える、RAG搭載のQAボット"
+readme = "README.md"
+authors = [
+    { name = "takuei", email = "273775677+takuei7290@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "dspy>=3.4.0",
+]
+
+[project.scripts]
+dspy-rag-qa = "dspy_rag_qa:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff.lint]
+extend-select = ["I"]
+
