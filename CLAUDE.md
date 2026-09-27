@@ -22,6 +22,7 @@ DSPy学習用の練習プロジェクト。自作のMarkdown/テキストをも�
 - ユーザーが「できた」と言ったら、`git status`・`git diff`・`uv run pytest` などの読み取り専用の確認で結果を検証してから次に進む
 - 新しい用語やツールは、使う前に「なんのためにやるのか」を短く説明する
 - DSPyの新しい要素(Signature・Module・Optimizerなど)は、「普通にプロンプトを書く場合と何が違うのか」をあわせて説明する
+- 各Issueの実装を始めるときに、その機能に関係する一次資料(公式ドキュメント・論文・ソース・モデルカード)の該当部分を、ページや節を示して解説する。全文は訳さず要点をまとめ、確認した内容と記憶を分けて伝える
 
 ## uvの使い方
 
@@ -87,7 +88,7 @@ DSPy学習用の練習プロジェクト。自作のMarkdown/テキストをも�
 
 ## Claudeへの注意
 
-- DSPyはAPIの変化が速い。DSPyのクラス・引数は記憶で書かず、インストール済みのソース(`.venv` 内)や公式ドキュメント(https://dspy.ai)で確認してから説明する
+- DSPyはAPIの変化が速い。DSPyのクラス・引数は記憶で書かず、インストール済みのソース(`.venv` 内)や一次資料(GitHub `stanfordnlp/dspy` の README に載っている公式ドキュメント https://dspy.ai と論文)で確認してから説明する。README に載っていない資料を使うときは、そのことを明示する
 - GitHub Actions の action のバージョン(`actions/checkout@vN`、`astral-sh/setup-uv@vN` など)は記憶で書かず、GitHub API でリリースを確認してから提案する
 - `gh` コマンドはClaudeの環境では使えないことがある。GitHubの状態は `git fetch -p` や `https://api.github.com/repos/<owner>/<repo>/...` で確認する
 - Ollamaの状態は `ollama list` などで確認する(モデルが無い・Ollamaが起動していない、を最初に疑う)
